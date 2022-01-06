@@ -1,0 +1,162 @@
+.login-page-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .page-title {
+        font-size: 35px;
+        color: $color-red;
+        margin-bottom: 20px;
+        font-weight: 900;
+    }
+    .page-subtitle {
+        font-size: 25px;
+        color: $color-grey-2;
+        margin-bottom: 50px;
+        font-weight: 700;
+    }
+    .login-form {
+        .checkbox {
+            margin-bottom: 25px;
+        }
+        .other-option-text {
+            color: $color-grey-4;
+            font-weight: 700;
+            font-size: 22px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                #{$start-direction}: 0;
+                @include transform(translateY(-50% * $transform-direction));
+                height: 1px;
+                width: calc(50% - 25px);
+                background: $color-grey-6;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                #{$end-direction}: 0;
+                @include transform(translateY(-50% * $transform-direction));
+                height: 1px;
+                width: calc(50% - 25px);
+                background: $color-grey-6;
+            }
+        }
+    }
+    .image-section-container {
+        position: relative;
+        .img-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 16px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .icons-container {
+            position: absolute;
+            top: 0;
+            #{$end-direction}: 0;
+            #white_box {
+                width: 140px;
+                height: 140px;
+                position: absolute;
+                #{$end-direction}: 98px;
+                transform: translateY(-20%);
+                border-radius: 25px;
+                background: $color-white-1;
+            }
+            svg {
+                width: 140px;
+                height: 140px;
+                position: absolute;
+                #{$end-direction}: 200px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+@include media-breakpoint-xl {
+    .login-page-container {
+        .page-title {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        .page-subtitle {
+            font-size: 30px;
+            margin-bottom: 100px;
+        }
+        .login-form {
+            .checkbox {
+                margin-bottom: 50px;
+            }
+            .other-option-text {
+                font-size: 22px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+        }
+        .image-section-container {
+            .img-container {
+                height: 745px;
+                border-radius: 25px;
+            }
+            .icons-container {
+                #white_box {
+                    width: 218px;
+                    height: 218px;
+                    #{$end-direction}: 98px;
+                    border-radius: 25px;
+                }
+                svg {
+                    width: 218px;
+                    height: 218px;
+                    #{$end-direction}: 200px;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-md {
+    .login-page-container {
+        .page-title {
+            margin-top: 20px;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .page-subtitle {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .login-form {
+            .checkbox {
+                margin-bottom: 50px;
+            }
+            .other-option-text {
+                font-size: 22px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+        }
+        .image-section-container {
+            margin-top: 30px;
+            .img-container {
+                height: 400px;
+                border-radius: 14px;
+            }
+            .icons-container {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.btn-style-1 {
+    font-size: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: $color-white;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    &:hover {
+        color: $color-white;
+    }
+    &.bg-red {
+        background: $color-red;
+    }
+    &.bg-grey {
+        background: $color-grey-3;
+    }
+}
+
+@include media-breakpoint-xl {
+    .btn-style-1 {
+        font-size: 20px;
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+}

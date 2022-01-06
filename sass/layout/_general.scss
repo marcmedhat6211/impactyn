@@ -1,0 +1,16 @@
+body {
+    // font-family: $pn-font-anglecia-regular;
+    background: $color-bg;
+    direction: $direction;
+    text-align: $start-direction;
+    overflow-x: hidden;
+    font-size: 14px;
+}
+
+button,
+a {
+    &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}

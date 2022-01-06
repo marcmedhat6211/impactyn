@@ -1,0 +1,45 @@
+.input-style-1 {
+    label {
+        font-size: 18px;
+        color: $color-grey-1;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+    input {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-#{$start-direction}: 12px;
+        border: 1px solid $color-grey-1;
+        color: $color-grey-1;
+        &:focus {
+            box-shadow: none;
+            border: 1px solid $color-grey-1;
+        }
+        &::placeholder {
+            font-size: 16px;
+            color: $color-grey-5;
+            font-weight: 700;
+        }
+    }
+    label.error {
+        color: $color-red;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+@include media-breakpoint-xl {
+    .input-style-1 {
+        label {
+            font-size: 25px;
+        }
+        input {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-#{$start-direction}: 16px;
+            &::placeholder {
+                font-size: 20px;
+            }
+        }
+    }
+}
