@@ -1,0 +1,24 @@
+.signup-form {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    .title-container {
+        margin-bottom: 55px;
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+        .page-title {
+            margin-#{$start-direction}: 14px;
+            font-size: 40px;
+            color: $color-red;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+    }
+    .checkboxes-container {
+        margin-bottom: 55px;
+        .checkbox:first-child {
+            margin-#{$end-direction}: 50px;
+        }
+    }
+}

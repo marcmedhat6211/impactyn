@@ -10730,7 +10730,7 @@ a:focus {
   border: 1px solid #616161;
   box-sizing: border-box;
   border-radius: 3px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .checkbox-style-1 .checkbox-effect-style:not(:checked) + label:before:checked,
 .checkbox-style-1 .checkbox-effect-style:checked + label:before:checked {
@@ -10783,11 +10783,13 @@ a:focus {
   margin-bottom: 3px;
 }
 .input-style-1 input {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  height: 38px;
   padding-left: 12px;
   border: 1px solid #616161;
-  color: #616161;
+  border-radius: 10px;
+  color: #5F5F5F;
+  font-size: 14px;
+  font-weight: 700;
 }
 .input-style-1 input:focus {
   box-shadow: none;
@@ -10803,18 +10805,46 @@ a:focus {
   font-size: 14px;
   font-weight: 400;
 }
+.input-style-1.phone-dopdown .inputs-container {
+  display: flex;
+  align-items: center;
+}
+.input-style-1.phone-dopdown .inputs-container select {
+  height: 38px;
+  flex: 0 0 15%;
+  border: 1px solid #616161;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #ECECEC;
+  font-weight: 700;
+  color: #616161;
+}
+.input-style-1.phone-dopdown .inputs-container select:focus {
+  box-shadow: none;
+  border-color: #616161;
+}
+.input-style-1.phone-dopdown .inputs-container input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
 @media (min-width: 1440px) {
   .input-style-1 label {
     font-size: 25px;
   }
   .input-style-1 input {
+    height: 55px;
+    font-size: 20px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 16px;
   }
   .input-style-1 input::placeholder {
     font-size: 20px;
+  }
+  .input-style-1.phone-dopdown .inputs-container select {
+    height: 55px;
   }
 }
 .login-page-container {
@@ -10967,6 +10997,30 @@ a:focus {
   .login-page-container .image-section-container .icons-container {
     display: none;
   }
+}
+.signup-form {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.signup-form .title-container {
+  margin-bottom: 55px;
+}
+.signup-form .title-container svg {
+  width: 50px;
+  height: 50px;
+}
+.signup-form .title-container .page-title {
+  margin-left: 14px;
+  font-size: 40px;
+  color: #ED202E;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.signup-form .checkboxes-container {
+  margin-bottom: 55px;
+}
+.signup-form .checkboxes-container .checkbox:first-child {
+  margin-right: 50px;
 }
 
 /*# sourceMappingURL=main.css.map */

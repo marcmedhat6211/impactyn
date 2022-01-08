@@ -6,11 +6,13 @@
         margin-bottom: 3px;
     }
     input {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        height: $input-height-md;
         padding-#{$start-direction}: 12px;
         border: 1px solid $color-grey-1;
-        color: $color-grey-1;
+        border-radius: 10px;
+        color: $color-grey-7;
+        font-size: 14px;
+        font-weight: 700;
         &:focus {
             box-shadow: none;
             border: 1px solid $color-grey-1;
@@ -26,6 +28,31 @@
         font-size: 14px;
         font-weight: 400;
     }
+    &.phone-dopdown {
+        .inputs-container {
+            display: flex;
+            align-items: center;
+            select {
+                height: $input-height-md;
+                flex: 0 0 15%;
+                border: 1px solid $color-grey-1;
+                border-#{$end-direction}: none;
+                border-top-#{$end-direction}-radius: 0;
+                border-bottom-#{$end-direction}-radius: 0;
+                background: $color-grey-8;
+                font-weight: 700;
+                color: $color-grey-1;
+                &:focus {
+                    box-shadow: none;
+                    border-color: $color-grey-1;
+                }
+            }
+            input {
+                border-top-#{$start-direction}-radius: 0;
+                border-bottom-#{$start-direction}-radius: 0;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-xl {
@@ -34,11 +61,20 @@
             font-size: 25px;
         }
         input {
+            height: $input-height-xl;
+            font-size: 20px;
             padding-top: 16px;
             padding-bottom: 16px;
             padding-#{$start-direction}: 16px;
             &::placeholder {
                 font-size: 20px;
+            }
+        }
+        &.phone-dopdown {
+            .inputs-container {
+                select {
+                    height: $input-height-xl;
+                }
             }
         }
     }

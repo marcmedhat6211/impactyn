@@ -8,7 +8,7 @@
     .checkbox-effect:not(:checked),
     .checkbox-effect:checked {
         position: absolute;
-        left: -9999px;
+        #{$start-direction}: -9999px;
     }
     label {
         cursor: pointer;
@@ -27,7 +27,7 @@
         border: 1px solid $color-grey-1;
         box-sizing: border-box;
         border-radius: 3px;
-        margin-#{$end-direction}: 20px;
+        margin-#{$end-direction}: 10px;
         &:checked {
             border: 3px solid $color-green !important;
         }

@@ -1,8 +1,4 @@
-// $(window).on("load", function() {
-//     $(".pre-loader").fadeOut("slow", function() {
-//         $(this).remove();
-//     });
-// });
+var phoneDropdownInput = $(".input-style-1.phone-dopdown");
 
 $(document).ready(function() {
     //lazy loading
@@ -15,6 +11,19 @@ $(document).ready(function() {
     $("i.convert-svg").each(function() {
         var $img = $(this);
         convertSvgToIcon($img);
+    });
+
+    //assign the value to the hidden input of phone
+    phoneDropdownInput.find("input[type=hidden]").val(phoneDropdownInput.find("select").val());
+    phoneDropdownInput.find("select").change(function() {
+        $(this).closest(".inputs-container").find("input[type=hidden]").val($(this).val());
+    });
+
+    phoneDropdownInput.find("input[type=tel]").on("input", function() {
+        let hiddenInput = $(this).closest(".inputs-container").find("input[type=hidden]");
+        let hiddenInputValue = hiddenInput.val();
+        let hiddenInputNewValue = hiddenInputValue + $(this).val();
+        hiddenInput.val(hiddenInputNewValue);
     });
 });
 
