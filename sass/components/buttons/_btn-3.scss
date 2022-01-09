@@ -1,0 +1,26 @@
+.btn-style-3 {
+    padding: 0;
+    background: $color-grey-7;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        width: 21px;
+        height: 21px;
+        color: $color-white;
+    }
+}
+
+@include media-breakpoint-md {
+    .btn-style-3 {
+        width: 24px;
+        height: 24px;
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

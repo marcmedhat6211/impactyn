@@ -16,9 +16,49 @@
         }
     }
     .checkboxes-container {
-        margin-bottom: 55px;
+        margin-bottom: 20px;
         .checkbox:first-child {
             margin-#{$end-direction}: 50px;
+        }
+    }
+    .agreement-text {
+        a {
+            margin-#{$start-direction}: 5px;
+            text-decoration: underline;
+            color: $color-blue;
+            &:hover {
+                color: $color-blue;
+            }
+            &:not(:last-child) {
+                margin-#{$end-direction}: 5px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-md {
+    .signup-form {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        .title-container {
+            margin-bottom: 25px;
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+            .page-title {
+                font-size: 25px;
+            }
+        }
+        .agreement-text {
+            .checkbox {
+                label span {
+                    padding-left: 5px;
+                }
+                label::before {
+                    width: 25px;
+                }
+            }
         }
     }
 }

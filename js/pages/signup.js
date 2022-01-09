@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    //======================================================TELEPHONE INPUT================================================================
+    $(".signup-form").validate();
+
     //assign the value to the hidden input of phone
     var phoneDropdownInput = $(".input-style-1.phone-dropdown");
     phoneDropdownInput.find("input[type=hidden]").val(phoneDropdownInput.find("select").val());
@@ -16,5 +17,16 @@ $(document).ready(function() {
         let hiddenInputNewValue = hiddenInputCurrentValue + $(this).val();
         hiddenInput.val(hiddenInputNewValue);
     });
-    //======================================================END TELEPHONE INPUT================================================================
+
+    if (!$(".agreement-text .checkbox input").prop('checked') == true) {
+        $(".signup-form button[type=submit]").attr("disabled", true);
+    }
+
+    $(".agreement-text .checkbox input").on("change", function() {
+        if (!$(this).prop('checked') == true) {
+            $(".signup-form button[type=submit]").attr("disabled", true);
+        } else {
+            $(".signup-form button[type=submit]").attr("disabled", false);
+        }
+    });
 });

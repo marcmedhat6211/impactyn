@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico" />
+
+    <title>Inputs Page</title>
+    <!-- BASE CSS-->
+    <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- END BASE CSS-->
+
+    <!-- PAGE CSS-->
+    <style>
+        .page-title {
+            font-size: 40px;
+            color: #ED202E;
+            font-weight: 700;
+        }
+    </style>
+    <!-- END PAGE CCS-->
+</head>
+
+<body>
+    <div class="pre-loader">
+        <div class="pre-loader-object"></div>
+    </div>
+    <!-- HEADER-->
+    <header>
+    </header>
+    <!--END HEADER -->
+
+
+
+    <main>
+        <!--BODY-->
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <h1 class="page-title text-center">Inputs</h1>
+                </div>
+                <div class="col-12 d-flex justify-content-end mb-3">
+                    <a href="ui-components.html" class="btn btn-style-1 bg-grey">Back to Ui Components</a>
+                </div>
+                <div class="col-12 d-flex justify-content-end mb-3">
+                    <a href="forms.html" class="btn btn-style-1 bg-grey">Back to Forms Styles</a>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="form-group input-style-1">
+                        <label for="input_1">Input Style 1</label>
+                        <input type="text" class="form-control" id="input_1" name="_input_1" placeholder="placeholder" required>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="form-group input-style-1 phone-dropdown">
+                        <label for="input_1_phone">Input Style 1 for phone</label>
+                        <div class="phone-inputs-container">
+                            <select class="form-control" id="country_code" name="_country_code">
+                                <option>+20</option>
+                                <option>+1</option>
+                                <option>+002</option>
+                            </select>
+                            <input type="tel" class="form-control" required>
+                            <input type="hidden" id="input_1_phone" name="_input_1_phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="form-group input-style-1">
+                        <div class="success-message-container d-flex align-items-center">
+                            <i class="convert-svg" data-src="../images/icons/check.svg"></i>
+                            <p class="mb-0 success-message">success message</p>
+                        </div>
+                        <label for="input_1_success_message">Input Style 1 With Success Message</label>
+                        <input type="text" class="form-control" id="input_1_success_message" name="_input_1_success_message" placeholder="placeholder" required>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="form-group input-style-1 select-dropdown">
+                        <label for="input_1_dropdown">Input Style 1 Select Dropdown</label>
+                        <div class="dropdown-container">
+                            <select class="form-control" id="input_1_dropdown" name="_input_1_dropdown">
+                                <option value="">Select Option</option>
+                                <option value="option-1">Option 1</option>
+                                <option value="option-2">Option 2</option>    
+                            </select>
+                            <div id="input_icon" class="input-icon d-flex justify-content-center align-items-center">
+                                <i class="convert-svg" data-src="../images/icons/caret-down.svg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="form-group input-style-1 files">
+                        <div id="input_icon" class="input-icon d-flex justify-content-center align-items-center">
+                            <i class="convert-svg" data-src="../images/icons/plus.svg"></i>
+                        </div>
+                        <p class="files-input-label">Input Style 1 Files Input</p>
+                        <label class="custom-file-upload">
+                            <span>
+                                You must add at least
+                                <span id="files_count">
+                                    5 images
+                                </span>
+                            </span>
+                            <input type="file" name="_files" id="files" multiple="multiple"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="input-style-1-group">
+                        <div class="inputs-label-container">
+                            <p class="label mb-0">Input Style 1 Group</p>
+                            <button type="button" class="btn btn-style-2">
+                                <i class="convert-svg" data-src="../images/icons/plus.svg"></i>
+                            </button>
+                        </div>
+                        <div class="container inputs-container pt-4 pb-4">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group input-style-1">
+                                        <label for="product_name">Product Name</label>
+                                        <input type="text" class="form-control" id="product_name" name="_product_name" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group input-style-1 files">
+                                        <p class="mb-0 images-count-text d-none">You added <span>4</span></p>
+                                        <div class="input-icon d-flex justify-content-center align-items-center">
+                                            <i class="convert-svg" data-src="../images/icons/plus.svg"></i>
+                                        </div>
+                                        <p class="files-input-label">Product Images</p>
+                                        <label class="custom-file-upload">
+                                            <span>
+                                            </span>
+                                            <input type="file" name="_product_images" id="product_images" multiple/>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="remove-item-container">
+                                <i class="convert-svg" data-src="../images/icons/x.svg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END BODY-->
+    </main>
+
+
+
+    <!--FOOTER-->
+    <footer>
+    </footer>
+    <!--END FOOTER-->
+
+    <!-- BASE JS-->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendors/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../vendors/jquery.lazy/jquery.lazy.min.js"></script>
+    <script src="../js/app.js"></script>
+    <!-- END BASE JS-->
+
+    <!-- PAGE JS-->
+    <script src="js/ui-components.js"></script>
+    <!-- END PAGE JS-->
+
+</body>
+
+</html>

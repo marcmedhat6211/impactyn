@@ -33,11 +33,13 @@
         <form action="#" class="signup-form" id="signup_form">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12">
                         <div class="title-container d-flex align-items-center">
                             <i class="convert-svg" data-src="images/logo_icon.svg"></i>
                             <h1 class="page-title">Sign up as a Brand</h1>
                         </div>
+                    </div>
+                    <div class="col-12 col-md-6">
                         <div class="checkboxes-container d-flex align-items-center">
                             <div class="checkbox checkbox-style-1">
                                 <input class="checkbox-effect checkbox-effect-style" id="brand" type="checkbox" name="_brand" />
@@ -56,12 +58,10 @@
                             <label for="email">Contact E-mail</label>
                             <input type="email" class="form-control" id="email" name="_email" placeholder="name@gmail.com" required>
                         </div>
-
-
-                        <div class="form-group input-style-1 phone-dopdown">
+                        <div class="form-group input-style-1 phone-dropdown">
                             <label for="phone_number">Mobile Number</label>
-                            <div class="inputs-container">
-                                <select class="form-control" id="country_code" name="_country_code">
+                            <div class="phone-inputs-container">
+                                <select class="form-control" id="country_code" name="_country_code" required>
                                     <option>+20</option>
                                     <option>+1</option>
                                     <option>+002</option>
@@ -70,18 +70,131 @@
                                 <input type="hidden" id="phone_number" name="_phone_number">
                             </div>
                         </div>
-
-
                         <div class="form-group input-style-1">
+                            <div class="success-message-container d-none align-items-center">
+                                <i class="convert-svg" data-src="images/icons/check.svg"></i>
+                                <p class="mb-0 success-message">success message</p>
+                            </div>
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="_password" placeholder="6+ Characters, ! Capital letter" required minlength="6">
                         </div>
                         <div class="form-group input-style-1">
-                            <label for="confirm_password">Password</label>
+                            <div class="success-message-container d-none align-items-center">
+                                <i class="convert-svg" data-src="images/icons/check.svg"></i>
+                                <p class="mb-0 success-message">success message</p>
+                            </div>
+                            <label for="confirm_password">Confirm Password</label>
                             <input type="password" class="form-control" id="confirm_password" name="_confirm_password" placeholder="6+ Characters, ! Capital letter" required minlength="6">
                         </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group input-style-1 select-dropdown">
+                                    <label for="country">Country</label>
+                                    <div class="dropdown-container">
+                                        <select class="form-control" id="country" name="_country" required>
+                                            <option value="">Select Country</option>
+                                            <option value="egypt">Egypt</option>
+                                            <option value="usa">USA</option>    
+                                        </select>
+                                        <div class="input-icon d-flex justify-content-center align-items-center">
+                                            <i class="convert-svg" data-src="images/icons/caret-down.svg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group input-style-1 select-dropdown">
+                                    <label for="city">City</label>
+                                    <div class="dropdown-container">
+                                        <select class="form-control" id="city" name="_city" required>
+                                            <option value="">Select City</option>
+                                            <option value="alexandria">Alexandria</option>
+                                            <option value="cairo">Cairo</option>    
+                                        </select>
+                                        <div class="input-icon d-flex justify-content-center align-items-center">
+                                            <i class="convert-svg" data-src="images/icons/caret-down.svg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6"></div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group input-style-1 select-dropdown">
+                            <label for="brand_category">Brand Category</label>
+                            <div class="dropdown-container">
+                                <select class="form-control" id="brand_category" name="_brand_category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="category-1">Category 1</option>
+                                    <option value="category-2">Category 2</option>    
+                                </select>
+                                <div class="input-icon d-flex justify-content-center align-items-center">
+                                    <i class="convert-svg" data-src="images/icons/caret-down.svg"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group input-style-1 files">
+                            <div class="input-icon d-flex justify-content-center align-items-center">
+                                <i class="convert-svg" data-src="images/icons/plus.svg"></i>
+                            </div>
+                            <p class="files-input-label">Brand Logos</p>
+                            <label class="custom-file-upload">
+                                <span>
+                                    You must add at least
+                                    <span id="files_count">
+                                        5 images
+                                    </span>
+                                </span>
+                                <input type="file" name="_files" id="files" multiple required/>
+                            </label>
+                        </div>
+                        <div class="input-style-1-group">
+                            <div class="inputs-label-container">
+                                <p class="label mb-0">Add Products</p>
+                                <button type="button" class="btn btn-style-2">
+                                    <i class="convert-svg" data-src="images/icons/plus.svg"></i>
+                                </button>
+                            </div>
+                            <div class="container inputs-container pt-4 pb-4">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group input-style-1">
+                                            <label for="product_name">Product Name</label>
+                                            <input type="text" class="form-control" id="product_name" name="_product_name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group input-style-1 files">
+                                            <p class="mb-0 images-count-text d-none">You added <span>4</span></p>
+                                            <div class="input-icon d-flex justify-content-center align-items-center">
+                                                <i class="convert-svg" data-src="images/icons/plus.svg"></i>
+                                            </div>
+                                            <p class="files-input-label">Product Images</p>
+                                            <label class="custom-file-upload">
+                                                <span>
+                                                </span>
+                                                <input type="file" name="_product_images" id="product_images" multiple/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-style-3 remove-item-btn d-none">
+                                    <i class="convert-svg" data-src="images/icons/x.svg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="agreement-text mb-4">
+                            <div class="checkbox checkbox-style-1">
+                                <input class="checkbox-effect checkbox-effect-style" id="agreement" type="checkbox" name="_agreement" />
+                                <label for="agreement">
+                                    <span>
+                                        I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> + <a href="legal-papers.html">Contract upload legal papers</a>
+                                    </span>
+                            </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-style-1 bg-red w-100">Create Account</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -104,6 +217,7 @@
     <!-- END BASE JS-->
 
     <!-- PAGE JS-->
+    <script src="js/pages/signup.js"></script>
     <!-- END PAGE JS-->
 
 </body>

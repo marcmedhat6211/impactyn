@@ -10669,7 +10669,7 @@ h3 {
   src: local("Anglecia Pro Display"), url("../fonts/Anglecia-Pro-Display.otf") format("woff");
 }
 body {
-  background: #E5E5E5;
+  background: #F8F8F8;
   direction: ltr;
   text-align: left;
   overflow-x: hidden;
@@ -10706,6 +10706,48 @@ a:focus {
     font-size: 20px;
     padding-top: 21px;
     padding-bottom: 21px;
+  }
+}
+.btn-style-2 {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ECECEC;
+  border-radius: 6px;
+}
+.btn-style-2 svg {
+  width: 21px;
+  height: 21px;
+  color: #6C6C6C;
+}
+
+.btn-style-3 {
+  padding: 0;
+  background: #5F5F5F;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-style-3 svg {
+  width: 21px;
+  height: 21px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 991.98px) {
+  .btn-style-3 {
+    width: 24px;
+    height: 24px;
+  }
+  .btn-style-3 svg {
+    width: 18px;
+    height: 18px;
   }
 }
 .checkbox-style-1 .checkbox-effect:not(:checked),
@@ -10763,9 +10805,6 @@ a:focus {
 }
 
 @media (min-width: 1440px) {
-  .checkbox-style-1 label {
-    font-size: 22px;
-  }
   .checkbox-style-1 .checkbox-effect-style:not(:checked) + label:before,
 .checkbox-style-1 .checkbox-effect-style:checked + label:before {
     width: 22px;
@@ -10776,14 +10815,20 @@ a:focus {
     font-size: 27px;
   }
 }
+.input-style-1 {
+  position: relative;
+}
 .input-style-1 label {
   font-size: 18px;
   color: #616161;
   font-weight: 700;
   margin-bottom: 3px;
 }
-.input-style-1 input {
-  height: 38px;
+.input-style-1 input,
+.input-style-1 select {
+  display: flex;
+  align-items: center;
+  height: 45px;
   padding-left: 12px;
   border: 1px solid #616161;
   border-radius: 10px;
@@ -10791,60 +10836,204 @@ a:focus {
   font-size: 14px;
   font-weight: 700;
 }
-.input-style-1 input:focus {
-  box-shadow: none;
+.input-style-1 input:focus,
+.input-style-1 select:focus {
+  box-shadow: none !important;
   border: 1px solid #616161;
 }
-.input-style-1 input::placeholder {
+.input-style-1 input::placeholder,
+.input-style-1 select::placeholder {
   font-size: 16px;
   color: #B4B4B4;
   font-weight: 700;
 }
 .input-style-1 label.error {
+  display: block;
   color: #ED202E;
   font-size: 14px;
   font-weight: 400;
 }
-.input-style-1.phone-dopdown .inputs-container {
+.input-style-1 .input-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 45px;
+  border: 1px solid #6A6A6A;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 50px;
+  background: #ECECEC;
+}
+.input-style-1 .input-icon svg {
+  width: 14px;
+  height: 14px;
+}
+.input-style-1 .success-message-container {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+.input-style-1 .success-message-container svg {
+  width: 21px;
+  height: 21px;
+  color: #39A927;
+  margin-right: 8px;
+}
+.input-style-1 .success-message-container .success-message {
+  color: #39A927;
+  font-weight: 400;
+}
+.input-style-1.phone-dropdown .phone-inputs-container {
   display: flex;
   align-items: center;
 }
-.input-style-1.phone-dopdown .inputs-container select {
-  height: 38px;
+.input-style-1.phone-dropdown .phone-inputs-container select {
   flex: 0 0 15%;
-  border: 1px solid #616161;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   background: #ECECEC;
-  font-weight: 700;
-  color: #616161;
 }
-.input-style-1.phone-dopdown .inputs-container select:focus {
-  box-shadow: none;
-  border-color: #616161;
-}
-.input-style-1.phone-dopdown .inputs-container input {
+.input-style-1.phone-dropdown .phone-inputs-container input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  page-break-after: right;
+}
+.input-style-1.select-dropdown .dropdown-container {
+  position: relative;
+}
+.input-style-1.select-dropdown .dropdown-container select {
+  appearance: none;
+  color: #B4B4B4;
+}
+.input-style-1.files .images-count-text {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  color: #3B7FB1;
+  font-weight: 700;
+}
+.input-style-1.files .input-icon {
+  top: 30px;
+}
+.input-style-1.files .files-input-label {
+  font-size: 18px;
+  color: #616161;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.input-style-1.files label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border: 1px solid #616161;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  color: #B4B4B4;
+}
+.input-style-1.files label span {
+  max-width: calc(100% - 60px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.input-style-1.files label #files_count {
+  color: #616161;
+  padding-left: 3px;
+}
+.input-style-1.files label input {
+  display: none;
+}
+
+.input-style-1-group {
+  margin-bottom: 35px;
+}
+.input-style-1-group .inputs-label-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.input-style-1-group .inputs-label-container .label {
+  color: #616161;
+  font-weight: 700;
+  font-size: 18px;
+}
+.input-style-1-group .inputs-container {
+  border: 1px solid #616161;
+  border-radius: 10px;
+  position: relative;
+}
+.input-style-1-group .inputs-container:not(:last-child) {
+  margin-bottom: 20px;
+}
+.input-style-1-group .inputs-container label,
+.input-style-1-group .inputs-container .files-input-label {
+  font-weight: 400;
+}
+.input-style-1-group .inputs-container .remove-item-btn {
+  position: absolute;
+  top: -15px;
+  left: -15px;
 }
 
 @media (min-width: 1440px) {
   .input-style-1 label {
     font-size: 25px;
   }
-  .input-style-1 input {
+  .input-style-1 input,
+.input-style-1 select {
     height: 55px;
     font-size: 20px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 16px;
   }
-  .input-style-1 input::placeholder {
+  .input-style-1 input::placeholder,
+.input-style-1 select::placeholder {
     font-size: 20px;
   }
-  .input-style-1.phone-dopdown .inputs-container select {
+  .input-style-1.phone-dropdown .phone-inputs-container select {
     height: 55px;
+  }
+  .input-style-1.select-dropdown .dropdown-container .input-icon {
+    height: 55px;
+  }
+  .input-style-1.files .input-icon {
+    top: 40.5px;
+    height: 55px;
+  }
+  .input-style-1.files .files-input-label {
+    font-size: 25px;
+  }
+  .input-style-1.files label {
+    height: 55px;
+  }
+
+  .input-style-1-group .inputs-label-container .label {
+    font-size: 25px;
+  }
+}
+@media (max-width: 991.98px) {
+  .input-style-1.phone-dropdown .phone-inputs-container select {
+    flex: 0 0 25%;
+  }
+
+  .input-style-1-group {
+    margin-bottom: 20px;
+  }
+  .input-style-1-group .inputs-label-container {
+    margin-bottom: 15px;
+  }
+  .input-style-1-group .inputs-container:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .input-style-1-group .inputs-container .remove-item-btn {
+    top: -10px;
+    left: -10px;
   }
 }
 .login-page-container {
@@ -11017,10 +11206,44 @@ a:focus {
   margin-bottom: 0;
 }
 .signup-form .checkboxes-container {
-  margin-bottom: 55px;
+  margin-bottom: 20px;
 }
 .signup-form .checkboxes-container .checkbox:first-child {
   margin-right: 50px;
+}
+.signup-form .agreement-text a {
+  margin-left: 5px;
+  text-decoration: underline;
+  color: #3B7FB1;
+}
+.signup-form .agreement-text a:hover {
+  color: #3B7FB1;
+}
+.signup-form .agreement-text a:not(:last-child) {
+  margin-right: 5px;
+}
+
+@media (max-width: 991.98px) {
+  .signup-form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .signup-form .title-container {
+    margin-bottom: 25px;
+  }
+  .signup-form .title-container svg {
+    width: 30px;
+    height: 30px;
+  }
+  .signup-form .title-container .page-title {
+    font-size: 25px;
+  }
+  .signup-form .agreement-text .checkbox label span {
+    padding-left: 5px;
+  }
+  .signup-form .agreement-text .checkbox label::before {
+    width: 25px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

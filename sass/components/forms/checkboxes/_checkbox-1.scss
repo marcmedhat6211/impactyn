@@ -60,9 +60,9 @@
 
 @include media-breakpoint-xl {
     .checkbox-style-1 {
-        label {
-            font-size: 22px;
-        }
+        // label {
+        //     font-size: 22px;
+        // }
         .checkbox-effect-style:not(:checked)+label:before,
         .checkbox-effect-style:checked+label:before {
             width: 22px;

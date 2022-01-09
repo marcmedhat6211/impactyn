@@ -1,11 +1,15 @@
 .input-style-1 {
+    position: relative;
     label {
         font-size: 18px;
         color: $color-grey-1;
         font-weight: 700;
         margin-bottom: 3px;
     }
-    input {
+    input,
+    select {
+        display: flex;
+        align-items: center;
         height: $input-height-md;
         padding-#{$start-direction}: 12px;
         border: 1px solid $color-grey-1;
@@ -14,7 +18,7 @@
         font-size: 14px;
         font-weight: 700;
         &:focus {
-            box-shadow: none;
+            box-shadow: none !important;
             border: 1px solid $color-grey-1;
         }
         &::placeholder {
@@ -24,33 +28,141 @@
         }
     }
     label.error {
+        display: block;
         color: $color-red;
         font-size: 14px;
         font-weight: 400;
     }
-    &.phone-dopdown {
-        .inputs-container {
+    .input-icon {
+        position: absolute;
+        top: 0;
+        #{$end-direction}: 0;
+        height: $input-height-md;
+        border: 1px solid $color-grey-12;
+        border-top-#{$end-direction}-radius: 10px;
+        border-bottom-#{$end-direction}-radius: 10px;
+        width: $input-icon-width;
+        background: $color-grey-8;
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+    .success-message-container {
+        position: absolute;
+        #{$end-direction}: 0;
+        top: 5px;
+        svg {
+            width: 21px;
+            height: 21px;
+            color: $color-green;
+            margin-#{$end-direction}: 8px;
+        }
+        .success-message {
+            color: $color-green;
+            font-weight: 400;
+        }
+    }
+    &.phone-dropdown {
+        .phone-inputs-container {
             display: flex;
             align-items: center;
             select {
-                height: $input-height-md;
                 flex: 0 0 15%;
-                border: 1px solid $color-grey-1;
                 border-#{$end-direction}: none;
                 border-top-#{$end-direction}-radius: 0;
                 border-bottom-#{$end-direction}-radius: 0;
                 background: $color-grey-8;
-                font-weight: 700;
-                color: $color-grey-1;
-                &:focus {
-                    box-shadow: none;
-                    border-color: $color-grey-1;
-                }
             }
             input {
                 border-top-#{$start-direction}-radius: 0;
                 border-bottom-#{$start-direction}-radius: 0;
+                page-break-after: right;
             }
+        }
+    }
+    &.select-dropdown {
+        .dropdown-container {
+            position: relative;
+            select {
+                appearance: none;
+                color: $color-grey-5;
+            }
+        }
+    }
+    &.files {
+        .images-count-text {
+            position: absolute;
+            #{$end-direction}: 0;
+            top: 3px;
+            color: $color-blue;
+            font-weight: 700;
+        }
+        .input-icon {
+            top: 30px;
+        }
+        .files-input-label {
+            font-size: 18px;
+            color: $color-grey-1;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding-#{$start-direction}: 12px;
+            border: 1px solid $color-grey-1;
+            width: 100%;
+            height: $input-height-md;
+            border-radius: 10px;
+            color: $color-grey-5;
+            span {
+                max-width: calc(100% - 60px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #files_count {
+                color: $color-grey-1;
+                padding-#{$start-direction}: 3px;
+            }
+            input {
+                display: none;
+            }
+        }
+    }
+}
+
+.input-style-1-group {
+    margin-bottom: 35px;
+    .inputs-label-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        .label {
+            color: $color-grey-1;
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+    .inputs-container {
+        border: 1px solid $color-grey-1;
+        border-radius: 10px;
+        position: relative;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        label,
+        .files-input-label {
+            font-weight: 400;
+        }
+        .remove-item-btn {
+            position: absolute;
+            top: -15px;
+            left: -15px;
         }
     }
 }
@@ -60,7 +172,8 @@
         label {
             font-size: 25px;
         }
-        input {
+        input,
+        select {
             height: $input-height-xl;
             font-size: 20px;
             padding-top: 16px;
@@ -70,11 +183,64 @@
                 font-size: 20px;
             }
         }
-        &.phone-dopdown {
-            .inputs-container {
+        &.phone-dropdown {
+            .phone-inputs-container {
                 select {
                     height: $input-height-xl;
                 }
+            }
+        }
+        &.select-dropdown {
+            .dropdown-container {
+                .input-icon {
+                    height: $input-height-xl;
+                }
+            }
+        }
+        &.files {
+            .input-icon {
+                top: 40.5px;
+                height: $input-height-xl;
+            }
+            .files-input-label {
+                font-size: 25px;
+            }
+            label {
+                height: $input-height-xl;
+            }
+        }
+    }
+    .input-style-1-group {
+        .inputs-label-container {
+            .label {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-md {
+    .input-style-1 {
+        &.phone-dropdown {
+            .phone-inputs-container {
+                select {
+                    flex: 0 0 25%;
+                }
+            }
+        }
+    }
+    .input-style-1-group {
+        margin-bottom: 20px;
+        .inputs-label-container {
+            margin-bottom: 15px;
+        }
+        .inputs-container {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            .remove-item-btn {
+                top: -10px;
+                left: -10px;
             }
         }
     }

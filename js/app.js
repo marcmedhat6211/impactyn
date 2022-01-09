@@ -1,5 +1,3 @@
-var phoneDropdownInput = $(".input-style-1.phone-dopdown");
-
 $(document).ready(function() {
     //lazy loading
     if ($("img.lazy").length > 0) {
@@ -13,17 +11,38 @@ $(document).ready(function() {
         convertSvgToIcon($img);
     });
 
-    //assign the value to the hidden input of phone
-    phoneDropdownInput.find("input[type=hidden]").val(phoneDropdownInput.find("select").val());
-    phoneDropdownInput.find("select").change(function() {
-        $(this).closest(".inputs-container").find("input[type=hidden]").val($(this).val());
+    $(".input-style-1.files input[type=file]").on('change', function(e) {
+        addTextAndImagesCountToFilesInput($(this));
     });
 
-    phoneDropdownInput.find("input[type=tel]").on("input", function() {
-        let hiddenInput = $(this).closest(".inputs-container").find("input[type=hidden]");
-        let hiddenInputValue = hiddenInput.val();
-        let hiddenInputNewValue = hiddenInputValue + $(this).val();
-        hiddenInput.val(hiddenInputNewValue);
+    // add new product inputs group
+    $(".input-style-1-group .inputs-label-container button").on('click', function(e) {
+        let lastProductInputs = $(".inputs-container:last-child");
+        lastProductInputs.clone().insertAfter(lastProductInputs);
+        let lastAddedProductInputs = $(".inputs-container:last-child");
+        lastAddedProductInputs.find(".remove-item-btn").removeClass("d-none");
+        let newInputs = lastAddedProductInputs.find("input");
+        newInputs.each(function() {
+            $(this).val('');
+        });
+        if (!lastAddedProductInputs.find(".images-count-text").hasClass("d-none")) {
+            lastAddedProductInputs.find(".images-count-text").addClass("d-none");
+        }
+        lastAddedProductInputs.find(".custom-file-upload span").empty();
+
+        $(".input-style-1-group .remove-item-btn").each(function() {
+            $(this).on('click', function(e) {
+                $(this).closest(".inputs-container").remove();
+            });
+        });
+
+
+        $(".input-style-1.files input[type=file]").each(function() {
+            $(this).on('change', function(e) {
+                addTextAndImagesCountToFilesInput($(this));
+            });
+        });
+
     });
 });
 
@@ -73,4 +92,24 @@ function getSvgIconByUrl(imgURL) {
     });
 
     return $svg;
+}
+
+function addTextAndImagesCountToFilesInput(selector) {
+    let files = selector.get(0).files;
+    let filesNames = [];
+    if (files.length > 0) {
+        for (var i = 0; i < files.length; ++i) {
+            filesNames.push(files[i].name);
+        }
+    }
+    let newLabelText = "";
+    filesNames.forEach(function(fileName, index) {
+        if (index == filesNames.length - 1) {
+            newLabelText += (fileName);
+        } else {
+            newLabelText += (fileName + ", ");
+        }
+    });
+    selector.closest("label").find("span").empty().text(newLabelText);
+    selector.closest(".form-group").find(".images-count-text").removeClass("d-none").find("span").text(filesNames.length);
 }
