@@ -1,0 +1,19 @@
+.tab-style-1 {
+    .nav-pills {
+        .nav-item {
+            &:not(:last-child) {
+                margin-#{$end-direction}: 25px;
+            }
+            .nav-link {
+                color: $color-grey-20;
+                font-size: 20px;
+                font-weight: 700;
+                background: transparent;
+                padding: 0;
+                &.active {
+                    color: $color-grey-21;
+                }
+            }
+        }
+    }
+}
