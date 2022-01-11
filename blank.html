@@ -27,11 +27,13 @@
             <i class="convert-svg" data-src="images/logo_icon.svg"></i>
             <p class="mb-0 logo-text">impactyn</p>
         </a>
-        <div class="icons-container">
-            <button type="button" class="chat-btn messages-btn">
-                <i class="convert-svg chat-icon" data-src="images/icons/chat.svg"></i>
-                <i class="convert-svg arrow-down-icon" data-src="images/icons/caret-down.svg"></i>
-                <div class="messages-notifications-box">
+        <div class="icons-container messages-notifications-container">
+            <div class="chat-container ">
+                <button type="button" class="chat-btn messages-btn">
+                    <i class="convert-svg chat-icon" data-src="images/icons/chat.svg"></i>
+                    <i class="convert-svg arrow-down-icon" data-src="images/icons/caret-down.svg"></i>
+                </button>
+                <div class="messages-notifications-box" id="messages_box">
                     <div class="box-header-container">
                         <p class="mb-0 box-title">Messages</p>
                         <div class="tab tab-style-1">
@@ -60,7 +62,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -88,7 +90,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -102,7 +104,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -116,7 +118,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -130,7 +132,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -144,7 +146,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                 </div>
@@ -163,7 +165,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -191,7 +193,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -205,7 +207,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -219,7 +221,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -233,7 +235,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -247,20 +249,22 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                 </div>
-                                <a class="all-messages-link d-block" href="inbox.html">See all messages</a>
+                                <a class="all-messages-link d-block" href="inbox.html">See all unread messages</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </button>
-            <button type="button" class="notifications-dropdown-btn messages-btn">
-                <i class="convert-svg notification-icon" data-src="images/icons/bell.svg"></i>
-                <i class="convert-svg arrow-down-icon" data-src="images/icons/caret-down.svg"></i>
-                <div class="messages-notifications-box">
+            </div>
+            <div class="notifications-container messages-notifications-container">
+                <button type="button" class="notifications-dropdown-btn messages-btn">
+                    <i class="convert-svg notification-icon" data-src="images/icons/bell.svg"></i>
+                    <i class="convert-svg arrow-down-icon" data-src="images/icons/caret-down.svg"></i>
+                </button>
+                <div class="messages-notifications-box" id="notifications_box">
                     <div class="box-header-container">
                         <p class="mb-0 box-title">Notifications</p>
                         <div class="tab tab-style-1">
@@ -289,7 +293,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -317,7 +321,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -331,7 +335,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -345,7 +349,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -359,7 +363,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -373,11 +377,11 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                 </div>
-                                <a class="all-messages-link d-block" href="inbox.html">See all messages</a>
+                                <a class="all-messages-link d-block" href="inbox.html">See all notifications</a>
                             </div>
                             <div class="tab-pane fade" id="pills-unread-notifications" role="tabpanel" aria-labelledby="pills-unread-notifications-tab">
                                 <div class="messages-container">
@@ -392,7 +396,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -420,7 +424,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -434,7 +438,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -448,7 +452,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -462,7 +466,7 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                     <!-- message -->
@@ -476,23 +480,23 @@
                                                 <p class="message-text">Your campaign is rejected, please check your messages</p>
                                                 <p class="message-date">Today at 9:42 AM</p>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </a>
                                     <!-- end message -->
                                 </div>
-                                <a class="all-messages-link d-block" href="inbox.html">See all messages</a>
+                                <a class="all-messages-link d-block" href="inbox.html">See all unread notifications</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </button>
-            <div class="profile-info-container">
-                <div class="profile-img-container">
-                    <img class="lazy" data-src="images/user_avatar_placeholder.jpg" alt="">
-                </div>
+            </div>
+            <div class="profile-info-container" id="profile_box">
                 <button type="button" class="profile-btn" id="profile_btn">
-                    <span>Hello, Brand</span>
-                    <i class="convert-svg" data-src="images/icons/caret-down.svg"></i>
+                    <div class="profile-img-container">
+                        <img class="lazy" data-src="images/user_avatar_placeholder.jpg" alt="">
+                    </div>
+                    <span class="d-none d-md-block">Hello, Brand</span>
+                    <i class="convert-svg d-none d-md-block" data-src="images/icons/caret-down.svg"></i>
                 </button>
                 <!-- profile menu -->
                 <div class="profile-menu">
@@ -524,9 +528,36 @@
         </div>
     </header>
     <!--END HEADER -->
-    <side-bar>
-
-    </side-bar>
+    <!-- SIDE MENU -->
+    <aside class="">
+        <a href="profile.html" class="side-bar-link">
+            <i class="convert-svg" data-src="images/icons/user-circle.svg"></i>
+            <p class="mb-0 link-text">Profile</p>
+        </a>
+        <!-- //TODO: this will be an accordion -->
+        <a href="#" class="side-bar-link">
+            <i class="convert-svg" data-src="images/icons/speaker.svg"></i>
+            <p class="mb-0 link-text">All campaigns</p>
+        </a>
+        <a href="create-campaign.html" class="side-bar-link">
+            <i class="convert-svg" data-src="images/icons/speaker.svg"></i>
+            <p class="mb-0 link-text">Create New Campain</p>
+        </a>
+        <a href="inbox.html" class="side-bar-link">
+            <i class="convert-svg" data-src="images/icons/envelope.svg"></i>
+            <p class="mb-0 link-text">Inbox</p>
+        </a>
+        <a href="statistics.html" class="side-bar-link">
+            <i class="convert-svg" data-src="images/icons/stock-exchange.svg"></i>
+            <p class="mb-0 link-text">Statistics</p>
+        </a>
+        <a href="budget.html" class="side-bar-link">
+            <i class="convert-svg" data-src="images/icons/coins.svg"></i>
+            <p class="mb-0 link-text">Campaign Budget</p>
+        </a>
+        <hr>
+    </aside>
+    <!-- END SIDE MENU -->
 
 
 

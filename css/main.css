@@ -10695,6 +10695,7 @@ header {
   align-items: center;
   padding-right: 16px;
   padding-left: 16px;
+  border-bottom: 1px solid #E0E0E0;
 }
 header .logo-container {
   display: block;
@@ -10721,7 +10722,10 @@ header .icons-container svg {
 header .icons-container svg:hover {
   color: #848484;
 }
-header .icons-container .chat-btn {
+header .icons-container .chat-container {
+  position: relative;
+}
+header .icons-container .chat-container .chat-btn {
   padding: 0;
   border: none;
   background: transparent;
@@ -10733,21 +10737,21 @@ header .icons-container .chat-btn {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  position: relative;
 }
-header .icons-container .chat-btn.active {
+header .icons-container .chat-container .chat-btn.active {
   background: #FFEBEC;
 }
-header .icons-container .chat-btn .chat-icon {
+header .icons-container .chat-container .chat-btn .chat-icon {
   width: 32px;
   height: 32px;
 }
-header .icons-container .chat-btn .arrow-down-icon {
+header .icons-container .chat-container .chat-btn .arrow-down-icon {
   width: 14px;
   height: 14px;
 }
-header .icons-container .chat-btn .messages-notifications-box {
+header .icons-container .chat-container .messages-notifications-box {
   max-height: calc(100vh - 75px);
+  min-width: 55vw;
   position: absolute;
   top: 64px;
   right: 0;
@@ -10764,50 +10768,50 @@ header .icons-container .chat-btn .messages-notifications-box {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-header .icons-container .chat-btn .messages-notifications-box.show {
+header .icons-container .chat-container .messages-notifications-box.show {
   opacity: 1;
   visibility: visible;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-header-container {
+header .icons-container .chat-container .messages-notifications-box .box-header-container {
   display: flex;
   align-items: center;
   padding-right: 40px;
   padding-left: 40px;
   margin-bottom: 20px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-header-container .box-title {
+header .icons-container .chat-container .messages-notifications-box .box-header-container .box-title {
   font-size: 26px;
   color: #0D0D0D;
   font-weight: 400;
   margin-right: 70px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container {
+header .icons-container .chat-container .messages-notifications-box .box-body-container {
   padding-left: 8px;
   padding-right: 8px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container {
   width: 100%;
-  max-height: 700px;
+  max-height: calc(100vh - 274px);
   overflow-y: auto;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container::-webkit-scrollbar {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container::-webkit-scrollbar {
   width: 0px;
   background: transparent;
   display: none;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container {
   border-bottom: 1px solid #D9D9D9;
   padding-top: 9px;
   padding-bottom: 9px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message {
   display: flex;
   padding: 24px 45px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message.unread {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message.unread {
   background: #DFEEFF;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container {
   width: 65px;
   height: 65px;
   border-radius: 50%;
@@ -10815,46 +10819,45 @@ header .icons-container .chat-btn .messages-notifications-box .box-body-containe
   overflow: hidden;
   background: #B7B7B7;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container img {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name,
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name,
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
   text-align: left;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name {
   font-size: 22px;
   font-weight: 700;
   color: #494949;
   margin-bottom: 8px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
   font-size: 20px;
   font-weight: 400;
   color: #2F2F2F;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text {
   margin-bottom: 25px;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
   margin-bottom: 0;
 }
-header .icons-container .chat-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .all-messages-link {
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .all-messages-link {
   font-size: 25px;
   color: #818181;
   font-weight: 700;
   text-align: center;
   padding-top: 38px;
 }
-header .icons-container .notifications-dropdown-btn {
+header .icons-container .notifications-container {
+  position: relative;
+}
+header .icons-container .notifications-container .notifications-dropdown-btn {
   padding: 0;
   border: none;
   background: transparent;
@@ -10866,21 +10869,21 @@ header .icons-container .notifications-dropdown-btn {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  position: relative;
 }
-header .icons-container .notifications-dropdown-btn.active {
+header .icons-container .notifications-container .notifications-dropdown-btn.active {
   background: #FFEBEC;
 }
-header .icons-container .notifications-dropdown-btn .notification-icon {
+header .icons-container .notifications-container .notifications-dropdown-btn .notification-icon {
   width: 32px;
   height: 32px;
 }
-header .icons-container .notifications-dropdown-btn .arrow-down-icon {
+header .icons-container .notifications-container .notifications-dropdown-btn .arrow-down-icon {
   width: 14px;
   height: 14px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box {
+header .icons-container .notifications-container .messages-notifications-box {
   max-height: calc(100vh - 75px);
+  min-width: 55vw;
   position: absolute;
   top: 64px;
   right: 0;
@@ -10897,50 +10900,50 @@ header .icons-container .notifications-dropdown-btn .messages-notifications-box 
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box.show {
+header .icons-container .notifications-container .messages-notifications-box.show {
   opacity: 1;
   visibility: visible;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-header-container {
+header .icons-container .notifications-container .messages-notifications-box .box-header-container {
   display: flex;
   align-items: center;
   padding-right: 40px;
   padding-left: 40px;
   margin-bottom: 20px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-header-container .box-title {
+header .icons-container .notifications-container .messages-notifications-box .box-header-container .box-title {
   font-size: 26px;
   color: #0D0D0D;
   font-weight: 400;
   margin-right: 70px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container {
   padding-left: 8px;
   padding-right: 8px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container {
   width: 100%;
-  max-height: 700px;
+  max-height: calc(100vh - 274px);
   overflow-y: auto;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container::-webkit-scrollbar {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container::-webkit-scrollbar {
   width: 0px;
   background: transparent;
   display: none;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container {
   border-bottom: 1px solid #D9D9D9;
   padding-top: 9px;
   padding-bottom: 9px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message {
   display: flex;
   padding: 24px 45px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message.unread {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message.unread {
   background: #DFEEFF;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container {
   width: 65px;
   height: 65px;
   border-radius: 50%;
@@ -10948,39 +10951,35 @@ header .icons-container .notifications-dropdown-btn .messages-notifications-box 
   overflow: hidden;
   background: #B7B7B7;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container img {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name,
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name,
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
   text-align: left;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name {
   font-size: 22px;
   font-weight: 700;
   color: #494949;
   margin-bottom: 8px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
   font-size: 20px;
   font-weight: 400;
   color: #2F2F2F;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text {
   margin-bottom: 25px;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
   margin-bottom: 0;
 }
-header .icons-container .notifications-dropdown-btn .messages-notifications-box .box-body-container .tab-content .tab-pane .all-messages-link {
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .all-messages-link {
   font-size: 25px;
   color: #818181;
   font-weight: 700;
@@ -11006,24 +11005,24 @@ header .icons-container .profile-info-container {
 header .icons-container .profile-info-container.active {
   background: #FFEBEC;
 }
-header .icons-container .profile-info-container .profile-img-container {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 12px;
-}
-header .icons-container .profile-info-container .profile-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 header .icons-container .profile-info-container .profile-btn {
   padding: 0;
   border: none;
   background: transparent;
   display: flex;
   align-items: center;
+}
+header .icons-container .profile-info-container .profile-btn .profile-img-container {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+}
+header .icons-container .profile-info-container .profile-btn .profile-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 header .icons-container .profile-info-container .profile-btn span {
   font-size: 20px;
@@ -11113,6 +11112,244 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   background: #E3E3E3;
 }
 
+@media (max-width: 991.98px) {
+  header {
+    -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-bottom: none;
+  }
+  header .logo-container svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+  header .logo-container .logo-text {
+    font-size: 18px;
+  }
+  header .icons-container .chat-container {
+    position: static;
+  }
+  header .icons-container .chat-container .chat-btn {
+    padding: 16px 12px;
+  }
+  header .icons-container .chat-container .chat-btn .chat-icon {
+    width: 24px;
+    height: 24px;
+  }
+  header .icons-container .chat-container .messages-notifications-box {
+    max-height: 100vh;
+    min-width: 100%;
+    top: 66px;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    padding-top: 25px;
+    padding-bottom: 0;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-header-container {
+    justify-content: space-between;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-bottom: 0;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-header-container .box-title {
+    font-size: 20px;
+    margin-right: 0;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container {
+    width: 100%;
+    max-height: calc(100vh - 177px);
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message {
+    padding: 22px 25px;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+    flex: 0 0 40px;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
+header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+    font-size: 14px;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text {
+    margin-bottom: 0;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+    display: none;
+  }
+  header .icons-container .chat-container .messages-notifications-box .box-body-container .tab-content .tab-pane .all-messages-link {
+    font-size: 16px;
+    padding: 16px 0;
+  }
+  header .icons-container .notifications-container {
+    position: static;
+  }
+  header .icons-container .notifications-container .notifications-dropdown-btn {
+    padding: 16px 12px;
+  }
+  header .icons-container .notifications-container .notifications-dropdown-btn .notification-icon {
+    width: 24px;
+    height: 24px;
+  }
+  header .icons-container .notifications-container .messages-notifications-box {
+    max-height: 100vh;
+    min-width: 100%;
+    top: 66px;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    padding-top: 25px;
+    padding-bottom: 0;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-header-container {
+    justify-content: space-between;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-bottom: 0;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-header-container .box-title {
+    font-size: 20px;
+    margin-right: 0;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container {
+    width: 100%;
+    max-height: calc(100vh - 177px);
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message {
+    padding: 22px 25px;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .img-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+    flex: 0 0 40px;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .campain-name {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text,
+header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+    font-size: 14px;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-text {
+    margin-bottom: 0;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .messages-container .message-container .message .message-details .message-date {
+    display: none;
+  }
+  header .icons-container .notifications-container .messages-notifications-box .box-body-container .tab-content .tab-pane .all-messages-link {
+    font-size: 16px;
+    padding: 16px 0;
+  }
+  header .icons-container .profile-info-container {
+    position: static;
+  }
+  header .icons-container .profile-info-container .profile-btn .profile-img-container {
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+  }
+  header .icons-container .profile-info-container .profile-menu {
+    padding-bottom: 0;
+    border: none;
+    border-radius: 0;
+    top: 66px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  header .icons-container .profile-info-container .profile-menu .general-info-container .text-info .name {
+    font-size: 18px;
+  }
+  header .icons-container .profile-info-container .profile-menu .general-info-container .text-info .email {
+    font-size: 14px;
+  }
+  header .icons-container .profile-info-container .profile-menu .account-navigation-links .link {
+    border-radius: 0;
+  }
+  header .icons-container .profile-info-container .profile-menu .account-navigation-links .link:not(:last-child) {
+    padding-bottom: 22px;
+    border-bottom: 1px solid #EBEAED;
+  }
+  header .icons-container .profile-info-container .profile-menu .account-navigation-links .link .link-text {
+    font-size: 18px;
+  }
+  header .icons-container .profile-info-container .profile-menu .account-navigation-links .link:hover {
+    background: transparent;
+  }
+}
+aside {
+  position: absolute;
+  background: #FFFFFF;
+  height: 100%;
+  width: 55px;
+  left: 0;
+  top: 64px;
+  border-right: 2px solid #ED202E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+aside.opened {
+  width: 310px;
+  align-items: flex-start;
+  padding-left: 16px;
+}
+aside .side-bar-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 20px;
+  margin: -20px;
+  position: relative;
+}
+aside .side-bar-link:not(:last-child) {
+  margin-bottom: 55px;
+}
+aside .side-bar-link svg {
+  height: 19px;
+  color: #575757;
+}
+aside .side-bar-link .link-text {
+  font-size: 22px;
+  font-weight: 400;
+  color: #676767;
+  white-space: nowrap;
+  position: absolute;
+  left: 75px;
+}
+aside .side-bar-link.active {
+  background: url("../images/active-side-bar-link-bg.svg");
+  background-size: 51px 64px;
+  background-repeat: no-repeat;
+  background-position: 7px;
+}
+aside .side-bar-link.active svg {
+  color: #FFFFFF;
+}
+
 .btn-style-1 {
   font-size: 14px;
   padding-top: 16px;
@@ -11148,6 +11385,7 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   align-items: center;
   background: #ECECEC;
   border-radius: 6px;
+  border: 1px solid #BFBFBF;
 }
 .btn-style-2 svg {
   width: 21px;
@@ -11200,7 +11438,7 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 1px solid #616161;
+  border: 1px solid #BFBFBF;
   box-sizing: border-box;
   border-radius: 3px;
   margin-right: 10px;
@@ -11255,8 +11493,8 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
 }
 .input-style-1 label {
   font-size: 18px;
-  color: #616161;
-  font-weight: 700;
+  color: #1F1F1F;
+  font-weight: 400;
   margin-bottom: 3px;
 }
 .input-style-1 input,
@@ -11265,8 +11503,8 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   align-items: center;
   height: 45px;
   padding-left: 12px;
-  border: 1px solid #616161;
-  border-radius: 10px;
+  border: 1px solid #EBEAED;
+  border-radius: 6px;
   color: #5F5F5F;
   font-size: 14px;
   font-weight: 700;
@@ -11274,13 +11512,13 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
 .input-style-1 input:focus,
 .input-style-1 select:focus {
   box-shadow: none !important;
-  border: 1px solid #616161;
+  border: 1px solid #EBEAED;
 }
 .input-style-1 input::placeholder,
 .input-style-1 select::placeholder {
   font-size: 16px;
-  color: #B4B4B4;
-  font-weight: 700;
+  color: #84818A;
+  font-weight: 400;
 }
 .input-style-1 label.error {
   display: block;
@@ -11293,9 +11531,9 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   top: 0;
   right: 0;
   height: 45px;
-  border: 1px solid #6A6A6A;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border: 1px solid #BFBFBF;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
   width: 50px;
   background: #ECECEC;
 }
@@ -11328,6 +11566,7 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   background: #ECECEC;
+  border: 1px solid #BFBFBF;
 }
 .input-style-1.phone-dropdown .phone-inputs-container input {
   border-top-left-radius: 0;
@@ -11339,8 +11578,9 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
 }
 .input-style-1.select-dropdown .dropdown-container select {
   appearance: none;
-  color: #B4B4B4;
+  color: #84818A;
   line-height: 1;
+  font-weight: 400;
 }
 .input-style-1.files .images-count-text {
   position: absolute;
@@ -11354,8 +11594,8 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
 }
 .input-style-1.files .files-input-label {
   font-size: 18px;
-  color: #616161;
-  font-weight: 700;
+  color: #1F1F1F;
+  font-weight: 400;
   margin-bottom: 3px;
 }
 .input-style-1.files label {
@@ -11363,7 +11603,8 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   display: flex;
   align-items: center;
   padding-left: 12px;
-  border: 1px solid #616161;
+  border: 1px solid #BFBFBF;
+  background: #FFFFFF;
   width: 100%;
   height: 45px;
   border-radius: 10px;
@@ -11375,9 +11616,10 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.input-style-1.files label #files_count {
+.input-style-1.files label span #files_count {
   color: #616161;
   padding-left: 3px;
+  font-weight: 700;
 }
 .input-style-1.files label input {
   display: none;
@@ -11391,24 +11633,32 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .input-style-1-group .inputs-label-container .label {
   color: #616161;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
+}
+.input-style-1-group .inputs-label-container .label.error {
+  color: #ED202E;
 }
 .input-style-1-group .inputs-container {
-  border: 1px solid #616161;
-  border-radius: 10px;
+  border: 1px solid #EBEAED;
+  border-radius: 6px;
+  background: #FFFFFF;
   position: relative;
 }
 .input-style-1-group .inputs-container:not(:last-child) {
   margin-bottom: 20px;
 }
+.input-style-1-group .inputs-container input {
+  border-color: #C1C1C1;
+}
 .input-style-1-group .inputs-container label,
 .input-style-1-group .inputs-container .files-input-label {
   font-weight: 400;
+  color: #1F1F1F;
 }
 .input-style-1-group .inputs-container .remove-item-btn {
   position: absolute;
@@ -11472,6 +11722,75 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
     left: -10px;
   }
 }
+.radio-style-1 .radio-effect:not(:checked),
+.radio-style-1 .radio-effect:checked {
+  position: absolute;
+  left: -9999px;
+}
+.radio-style-1 label {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #1E1E1E;
+}
+.radio-style-1 .radio-effect-style:not(:checked) + label:before,
+.radio-style-1 .radio-effect-style:checked + label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #BFBFBF;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-right: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.radio-style-1 .radio-effect-style:not(:checked) + label:after,
+.radio-style-1 .radio-effect-style:checked + label:after {
+  content: "";
+  font-family: fontawesome;
+  font-size: 21px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: absolute;
+  left: 1px;
+  top: -2px;
+  color: #39A927;
+  text-shadow: 0px -1px 0px #fff;
+  transform-origin: center center;
+}
+.radio-style-1 .radio-effect-style:checked + label:before {
+  border: 3px solid #39A927;
+}
+.radio-style-1 .radio-effect-style:not(:checked) + label:after {
+  transform: scale(1, 0);
+}
+.radio-style-1 .radio-effect-style:checked + label:after {
+  transform: scale(1, 1);
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+
+@media (min-width: 1440px) {
+  .radio-style-1 .radio-effect-style:not(:checked) + label:before,
+.radio-style-1 .radio-effect-style:checked + label:before {
+    width: 22px;
+    height: 22px;
+  }
+  .radio-style-1 .radio-effect-style:not(:checked) + label:after,
+.radio-style-1 .radio-effect-style:checked + label:after {
+    font-size: 27px;
+  }
+}
 .tab-style-1 .nav-pills .nav-item:not(:last-child) {
   margin-right: 25px;
 }
@@ -11486,6 +11805,11 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   color: #7A7A7A;
 }
 
+@media (max-width: 991.98px) {
+  .tab-style-1 .nav-pills .nav-item .nav-link {
+    font-size: 14px;
+  }
+}
 .login-page-container {
   min-height: 100vh;
   display: flex;
@@ -11655,10 +11979,10 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   font-weight: 700;
   margin-bottom: 0;
 }
-.signup-form .checkboxes-container {
+.signup-form .radios-container {
   margin-bottom: 20px;
 }
-.signup-form .checkboxes-container .checkbox:first-child {
+.signup-form .radios-container .radio:first-child {
   margin-right: 50px;
 }
 .signup-form .agreement-text a {
@@ -11687,6 +12011,13 @@ header .icons-container .profile-info-container .profile-menu .account-navigatio
   }
   .signup-form .title-container .page-title {
     font-size: 25px;
+  }
+  .signup-form .radios-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .signup-form .radios-container .radio:first-child {
+    margin-right: 50px;
   }
   .signup-form .agreement-text .checkbox label span {
     padding-left: 5px;

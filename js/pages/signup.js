@@ -1,17 +1,23 @@
 $(document).ready(function() {
     $(".signup-form").validate();
+    // {
+    //     errorPlacement: function(error, element) {
+    //         error.insertAfter();
+    //     }
+    // }
 
     //assign the value to the hidden input of phone
     var phoneDropdownInput = $(".input-style-1.phone-dropdown");
     phoneDropdownInput.find("input[type=hidden]").val(phoneDropdownInput.find("select").val());
     phoneDropdownInput.find("select").on('change', function(e) {
-        let hiddenInput = $(this).closest(".inputs-container").find("input[type=hidden]");
-        let telInputValue = $(this).closest(".inputs-container").find("input[type=tel]").val();
+        let hiddenInput = $(this).closest(".phone-inputs-container").find("input[type=hidden]");
+        console.log(hiddenInput);
+        let telInputValue = $(this).closest(".phone-inputs-container").find("input[type=tel]").val();
         hiddenInput.val($(this).val() + telInputValue);
     });
 
     phoneDropdownInput.find("input[type=tel]").on("input", function() {
-        let hiddenInput = $(this).closest(".inputs-container").find("input[type=hidden]");
+        let hiddenInput = $(this).closest(".phone-inputs-container").find("input[type=hidden]");
         hiddenInput.val(phoneDropdownInput.find("select").val());
         let hiddenInputCurrentValue = hiddenInput.val();
         let hiddenInputNewValue = hiddenInputCurrentValue + $(this).val();
@@ -41,24 +47,15 @@ $(document).ready(function() {
         }
         lastAddedProductInputs.find(".custom-file-upload span").empty();
 
-        //TODO: fix the issue here (the firstChildTextInput and firstChildImagesInput are undefined)
-        var firstChildTextInput = $(".inputs-container:first-child input[type=text]");
-        var firstChildImagesInput = $(".inputs-container:first-child input[type=file]");
-        var firstChildTextInputId = firstChildTextInput.attr("id");
-        var firstChildTextInputName = firstChildTextInput.attr("name");
-        var firstChildImagesInputId = firstChildImagesInput.attr("id");
-        var firstChildImagesInputName = firstChildImagesInput.attr("name");
-
         var allProductsInputsGroups = $(".inputs-container");
         allProductsInputsGroups.each(function(index) {
+            let firstChildTextInputId = $(allProductsInputsGroups[0]).find("input[type=text]").attr("id");
+            let firstChildImagesInputId = $(allProductsInputsGroups[0]).find("input[type=file]").attr("id");
             if (index == allProductsInputsGroups.length - 1) {
                 let currentTextInput = $(this).find("input[type=text]");
                 let currentImagesInput = $(this).find("input[type=file]");
-
                 currentTextInput.attr("id", firstChildTextInputId + `_${index}`);
-                currentTextInput.attr("name", firstChildTextInputName + `_${index}`);
                 currentImagesInput.attr("id", firstChildImagesInputId + `_${index}`);
-                currentImagesInput.attr("name", firstChildImagesInputName + `_${index}`);
             }
         });
 

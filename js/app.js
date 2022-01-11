@@ -12,25 +12,37 @@ $(document).ready(function() {
     });
 
     $("header #profile_btn").on("click", function(e) {
-        // e.stopPropagation();
-        // $(document).click();
         $(this).closest(".profile-info-container").toggleClass("active");
         $(this).closest(".profile-info-container").find(".profile-menu").toggleClass("show");
+        $("header .messages-btn").removeClass("active");
+        $(".messages-notifications-box").removeClass("show");
     });
 
-    $("header .messages-btn").on("click", function(e) {
-        // e.stopPropagation();
-        // $(document).click();
-        $(this).toggleClass("active");
-        $(this).find(".messages-notifications-box").toggleClass("show");
+    $("header .messages-btn").each(function() {
+        $(this).on("click", function(e) {
+            e.stopPropagation();
+            $(this).toggleClass("active");
+            $(this).parent().find(".messages-notifications-box").toggleClass("show");
+            $("header .messages-btn").not($(this)).removeClass("active");
+            $(".messages-notifications-box").not($(this).parent().find(".messages-notifications-box")).removeClass("show");
+            $("header .profile-info-container").removeClass("active");
+            $("header .profile-menu").removeClass("show");
+        });
     });
 
-    // $(document).on("click", function() {
-    //     $("header .messages-btn").removeClass("active");
-    //     $("header .messages-notifications-box").removeClass("show");
-    //     $("header .profile-info-container").removeClass("active");
-    //     $("header .profile-menu").removeClass("show");
-    // });
+    $(document).on("click", function(e) {
+        if (
+            $(e.target).is("#messages_box, #messages_box *") ||
+            $(e.target).is("#notifications_box, #notifications_box *") ||
+            $(e.target).is("#profile_box, #profile_box *")
+        ) {
+            return;
+        }
+        $("header .messages-btn").removeClass("active");
+        $("header .messages-notifications-box").removeClass("show");
+        $("header .profile-info-container").removeClass("active");
+        $("header .profile-menu").removeClass("show");
+    });
 });
 
 function convertSvgToIcon($img) {

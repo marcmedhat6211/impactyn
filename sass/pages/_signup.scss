@@ -15,9 +15,9 @@
             margin-bottom: 0;
         }
     }
-    .checkboxes-container {
+    .radios-container {
         margin-bottom: 20px;
-        .checkbox:first-child {
+        .radio:first-child {
             margin-#{$end-direction}: 50px;
         }
     }
@@ -48,6 +48,13 @@
             }
             .page-title {
                 font-size: 25px;
+            }
+        }
+        .radios-container {
+            flex-direction: column;
+            align-items: flex-start !important;
+            .radio:first-child {
+                margin-#{$end-direction}: 50px;
             }
         }
         .agreement-text {

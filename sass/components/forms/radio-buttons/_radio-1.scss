@@ -1,12 +1,12 @@
-.checkbox-style-1 {
+.radio-style-1 {
     @mixin transition-mix($property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
         transition-property: $property;
         transition-duration: $duration;
         transition-timing-function: $timing;
         transition-delay: $delay;
     }
-    .checkbox-effect:not(:checked),
-    .checkbox-effect:checked {
+    .radio-effect:not(:checked),
+    .radio-effect:checked {
         position: absolute;
         #{$start-direction}: -9999px;
     }
@@ -18,8 +18,8 @@
         font-size: 16px;
         color: $color-black-1;
     }
-    .checkbox-effect-style:not(:checked)+label:before,
-    .checkbox-effect-style:checked+label:before {
+    .radio-effect-style:not(:checked)+label:before,
+    .radio-effect-style:checked+label:before {
         content: "";
         display: inline-block;
         width: 16px;
@@ -30,8 +30,8 @@
         margin-#{$end-direction}: 10px;
         @include transition(all .2s ease-in-out);
     }
-    .checkbox-effect-style:not(:checked)+label:after,
-    .checkbox-effect-style:checked+label:after {
+    .radio-effect-style:not(:checked)+label:after,
+    .radio-effect-style:checked+label:after {
         content: "\f00c";
         font: {
             family: fontawesome;
@@ -47,27 +47,27 @@
         text-shadow: 0px -1px 0px #fff;
         transform-origin: center center;
     }
-    .checkbox-effect-style:checked+label:before {
+    .radio-effect-style:checked+label:before {
         border: 3px solid $color-green;
     }
-    .checkbox-effect-style:not(:checked)+label:after {
+    .radio-effect-style:not(:checked)+label:after {
         transform: scale(1, 0);
     }
-    .checkbox-effect-style:checked+label:after {
+    .radio-effect-style:checked+label:after {
         transform: scale(1, 1);
         @include transition-mix;
     }
 }
 
 @include media-breakpoint-xl {
-    .checkbox-style-1 {
-        .checkbox-effect-style:not(:checked)+label:before,
-        .checkbox-effect-style:checked+label:before {
+    .radio-style-1 {
+        .radio-effect-style:not(:checked)+label:before,
+        .radio-effect-style:checked+label:before {
             width: 22px;
             height: 22px;
         }
-        .checkbox-effect-style:not(:checked)+label:after,
-        .checkbox-effect-style:checked+label:after {
+        .radio-effect-style:not(:checked)+label:after,
+        .radio-effect-style:checked+label:after {
             font: {
                 size: 27px;
             }

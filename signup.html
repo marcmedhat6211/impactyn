@@ -22,7 +22,7 @@
         <div class="pre-loader-object"></div>
     </div>
     <!-- HEADER-->
-    <header>
+    <header class="d-none">
     </header>
     <!--END HEADER -->
 
@@ -40,13 +40,13 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="checkboxes-container d-flex align-items-center">
-                            <div class="checkbox checkbox-style-1">
-                                <input class="checkbox-effect checkbox-effect-style" id="brand" type="checkbox" name="_brand" />
+                        <div class="radios-container d-flex align-items-center">
+                            <div class="radio radio-style-1">
+                                <input class="radio-effect radio-effect-style" id="brand" type="radio" name="_identity" value="brand" />
                                 <label for="brand">I am a brand</label>
                             </div>
-                            <div class="checkbox checkbox-style-1">
-                                <input class="checkbox-effect checkbox-effect-style" id="agency" type="checkbox" name="_agency" />
+                            <div class="radio radio-style-1">
+                                <input class="radio-effect radio-effect-style" id="agency" type="radio" name="_identity" value="agency" />
                                 <label for="agency">I am an agency</label>
                             </div>
                         </div>
@@ -77,14 +77,6 @@
                             </div>
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="_password" placeholder="6+ Characters, ! Capital letter" required minlength="6">
-                        </div>
-                        <div class="form-group input-style-1">
-                            <div class="success-message-container d-none align-items-center">
-                                <i class="convert-svg" data-src="images/icons/check.svg"></i>
-                                <p class="mb-0 success-message">success message</p>
-                            </div>
-                            <label for="confirm_password">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirm_password" name="_confirm_password" placeholder="6+ Characters, ! Capital letter" required minlength="6">
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-6">
@@ -160,7 +152,7 @@
                                     <div class="col-12 col-md-6">
                                         <div class="form-group input-style-1">
                                             <label for="product_name">Product Name</label>
-                                            <input type="text" class="form-control" id="product_name" name="_product_name" required>
+                                            <input type="text" class="form-control" id="product_name" name="product_names[]" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">

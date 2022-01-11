@@ -1,0 +1,51 @@
+aside {
+    position: absolute;
+    background: $color-white;
+    height: 100%;
+    width: $side-bar-closed-width;
+    left: 0;
+    top: $navigation-bar-height;
+    border-right: 2px solid $color-red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    @include transition(all .3s ease-in-out);
+    &.opened {
+        width: $side-bar-opened-width;
+        align-items: flex-start;
+        padding-left: 16px;
+    }
+    .side-bar-link {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 20px;
+        margin: -20px;
+        position: relative;
+        &:not(:last-child) {
+            margin-bottom: 55px;
+        }
+        svg {
+            height: 19px;
+            color: $color-grey-27;
+        }
+        .link-text {
+            font-size: 22px;
+            font-weight: 400;
+            color: $color-grey-28;
+            white-space: nowrap;
+            position: absolute;
+            left: 75px;
+        }
+        &.active {
+            background: url("../images/active-side-bar-link-bg.svg");
+            background-size: 51px 64px;
+            background-repeat: no-repeat;
+            background-position: 7px;
+            svg {
+                color: $color-white;
+            }
+        }
+    }
+}

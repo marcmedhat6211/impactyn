@@ -2,8 +2,8 @@
     position: relative;
     label {
         font-size: 18px;
-        color: $color-grey-1;
-        font-weight: 700;
+        color: $color-black-4;
+        font-weight: 400;
         margin-bottom: 3px;
     }
     input,
@@ -12,19 +12,19 @@
         align-items: center;
         height: $input-height-md;
         padding-#{$start-direction}: 12px;
-        border: 1px solid $color-grey-1;
-        border-radius: 10px;
+        border: 1px solid $color-grey-10;
+        border-radius: 6px;
         color: $color-grey-7;
         font-size: 14px;
         font-weight: 700;
         &:focus {
             box-shadow: none !important;
-            border: 1px solid $color-grey-1;
+            border: 1px solid $color-grey-10;
         }
         &::placeholder {
             font-size: 16px;
-            color: $color-grey-5;
-            font-weight: 700;
+            color: $color-grey-31;
+            font-weight: 400;
         }
     }
     label.error {
@@ -38,9 +38,9 @@
         top: 0;
         #{$end-direction}: 0;
         height: $input-height-md;
-        border: 1px solid $color-grey-12;
-        border-top-#{$end-direction}-radius: 10px;
-        border-bottom-#{$end-direction}-radius: 10px;
+        border: 1px solid $color-grey-9;
+        border-top-#{$end-direction}-radius: 6px;
+        border-bottom-#{$end-direction}-radius: 6px;
         width: $input-icon-width;
         background: $color-grey-8;
         svg {
@@ -73,6 +73,7 @@
                 border-top-#{$end-direction}-radius: 0;
                 border-bottom-#{$end-direction}-radius: 0;
                 background: $color-grey-8;
+                border: 1px solid $color-grey-9;
             }
             input {
                 border-top-#{$start-direction}-radius: 0;
@@ -86,8 +87,9 @@
             position: relative;
             select {
                 appearance: none;
-                color: $color-grey-5;
+                color: $color-grey-31;
                 line-height: 1;
+                font-weight: 400;
             }
         }
     }
@@ -104,8 +106,8 @@
         }
         .files-input-label {
             font-size: 18px;
-            color: $color-grey-1;
-            font-weight: 700;
+            color: $color-black-4;
+            font-weight: 400;
             margin-bottom: 3px;
         }
         label {
@@ -113,7 +115,8 @@
             display: flex;
             align-items: center;
             padding-#{$start-direction}: 12px;
-            border: 1px solid $color-grey-1;
+            border: 1px solid $color-grey-9;
+            background: $color-white;
             width: 100%;
             height: $input-height-md;
             border-radius: 10px;
@@ -123,10 +126,11 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-            }
-            #files_count {
-                color: $color-grey-1;
-                padding-#{$start-direction}: 3px;
+                #files_count {
+                    color: $color-grey-1;
+                    padding-#{$start-direction}: 3px;
+                    font-weight: 700;
+                }
             }
             input {
                 display: none;
@@ -142,23 +146,31 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         .label {
             color: $color-grey-1;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 22px;
+        }
+        .label.error {
+            color: $color-red;
         }
     }
     .inputs-container {
-        border: 1px solid $color-grey-1;
-        border-radius: 10px;
+        border: 1px solid $color-grey-10;
+        border-radius: 6px;
+        background: $color-white;
         position: relative;
         &:not(:last-child) {
             margin-bottom: 20px;
         }
+        input {
+            border-color: $color-grey-30;
+        }
         label,
         .files-input-label {
             font-weight: 400;
+            color: $color-black-4;
         }
         .remove-item-btn {
             position: absolute;

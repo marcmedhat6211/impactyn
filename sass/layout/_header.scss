@@ -16,6 +16,7 @@
 
 @mixin messages_notifications_style {
     max-height: calc(100vh - 75px);
+    min-width: 55vw;
     position: absolute;
     top: $navigation-bar-height;
     #{$end-direction}: 0;
@@ -51,7 +52,7 @@
             .tab-pane {
                 .messages-container {
                     width: 100%;
-                    max-height: 700px;
+                    max-height: calc(100vh - 274px);
                     overflow-y: auto;
                     &::-webkit-scrollbar {
                         width: 0px;
@@ -86,10 +87,6 @@
                                 .message-text,
                                 .message-date {
                                     text-align: $start-direction;
-                                    max-width: 100%;
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
                                 }
                                 .campain-name {
                                     font-size: 22px;
@@ -125,6 +122,70 @@
     }
 }
 
+@mixin messages_notifications_mobile_style {
+    max-height: 100vh;
+    min-width: 100%;
+    top: 66px;
+    #{$start-direction}: 0;
+    border: none;
+    border-radius: 0;
+    padding-top: 25px;
+    padding-bottom: 0;
+    .box-header-container {
+        justify-content: space-between;
+        padding-#{$end-direction}: 25px;
+        padding-#{$start-direction}: 25px;
+        margin-bottom: 0;
+        .box-title {
+            font-size: 20px;
+            margin-#{$end-direction}: 0;
+        }
+    }
+    .box-body-container {
+        padding-#{$start-direction}: 8px;
+        padding-#{$end-direction}: 8px;
+        .tab-content {
+            .tab-pane {
+                .messages-container {
+                    width: 100%;
+                    max-height: calc(100vh - 177px);
+                    .message-container {
+                        .message {
+                            padding: 22px 25px;
+                            .img-container {
+                                width: 40px;
+                                height: 40px;
+                                margin-#{$end-direction}: 14px;
+                                flex: 0 0 40px;
+                            }
+                            .message-details {
+                                .campain-name {
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                }
+                                .message-text,
+                                .message-date {
+                                    font-size: 14px;
+                                }
+                                .message-text {
+                                    margin-bottom: 0;
+                                }
+                                .message-date {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .all-messages-link {
+                    font-size: 16px;
+                    padding: 16px 0;
+                }
+            }
+        }
+    }
+}
+
 header {
     width: 100%;
     height: $navigation-bar-height;
@@ -134,6 +195,7 @@ header {
     align-items: center;
     padding-#{$end-direction}: 16px;
     padding-#{$start-direction}: 16px;
+    border-bottom: 1px solid $color-grey-26;
     .logo-container {
         display: block;
         display: flex;
@@ -158,33 +220,37 @@ header {
                 color: $color-grey-13;
             }
         }
-        .chat-btn {
-            @include button_fixed_style();
-            @include dropdown_container_style();
+        .chat-container {
             position: relative;
-            .chat-icon {
-                width: 32px;
-                height: 32px;
-            }
-            .arrow-down-icon {
-                width: 14px;
-                height: 14px;
+            .chat-btn {
+                @include button_fixed_style();
+                @include dropdown_container_style();
+                .chat-icon {
+                    width: 32px;
+                    height: 32px;
+                }
+                .arrow-down-icon {
+                    width: 14px;
+                    height: 14px;
+                }
             }
             .messages-notifications-box {
                 @include messages_notifications_style();
             }
         }
-        .notifications-dropdown-btn {
-            @include button_fixed_style();
-            @include dropdown_container_style();
+        .notifications-container {
             position: relative;
-            .notification-icon {
-                width: 32px;
-                height: 32px;
-            }
-            .arrow-down-icon {
-                width: 14px;
-                height: 14px;
+            .notifications-dropdown-btn {
+                @include button_fixed_style();
+                @include dropdown_container_style();
+                .notification-icon {
+                    width: 32px;
+                    height: 32px;
+                }
+                .arrow-down-icon {
+                    width: 14px;
+                    height: 14px;
+                }
             }
             .messages-notifications-box {
                 @include messages_notifications_style();
@@ -194,19 +260,19 @@ header {
             @include dropdown_container_style();
             position: relative;
             @include transition(all .3s ease-in-out);
-            .profile-img-container {
-                width: 35px;
-                height: 35px;
-                border-radius: 50%;
-                overflow: hidden;
-                margin-#{$end-direction}: 12px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
             .profile-btn {
+                .profile-img-container {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-#{$end-direction}: 12px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
                 @include button_fixed_style();
                 display: flex;
                 align-items: center;
@@ -292,6 +358,95 @@ header {
                         }
                         &:hover {
                             background: $color-grey-19;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-md {
+    header {
+        @include boxShadow(0px 4px 12px rgba($color-black-default, 0.05));
+        border-bottom: none;
+        .logo-container {
+            svg {
+                width: 20px;
+                height: 20px;
+                margin-#{$end-direction}: 6px;
+            }
+            .logo-text {
+                font-size: 18px;
+            }
+        }
+        .icons-container {
+            .chat-container {
+                position: static;
+                .chat-btn {
+                    padding: 16px 12px;
+                    .chat-icon {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+                .messages-notifications-box {
+                    @include messages_notifications_mobile_style();
+                }
+            }
+            .notifications-container {
+                position: static;
+                .notifications-dropdown-btn {
+                    padding: 16px 12px;
+                    .notification-icon {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+                .messages-notifications-box {
+                    @include messages_notifications_mobile_style();
+                }
+            }
+            .profile-info-container {
+                position: static;
+                .profile-btn {
+                    .profile-img-container {
+                        width: 30px;
+                        height: 30px;
+                        margin-#{$end-direction}: 0;
+                    }
+                }
+                .profile-menu {
+                    padding-bottom: 0;
+                    border: none;
+                    border-radius: 0;
+                    top: 66px;
+                    width: 100%;
+                    #{$start-direction}: 0;
+                    bottom: 0;
+                    .general-info-container {
+                        .text-info {
+                            .name {
+                                font-size: 18px;
+                            }
+                            .email {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .account-navigation-links {
+                        .link {
+                            border-radius: 0;
+                            &:not(:last-child) {
+                                padding-bottom: 22px;
+                                border-bottom: 1px solid $color-grey-10;
+                            }
+                            .link-text {
+                                font-size: 18px;
+                            }
+                            &:hover {
+                                background: transparent;
+                            }
                         }
                     }
                 }
